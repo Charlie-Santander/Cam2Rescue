@@ -1,0 +1,12 @@
+.img-resize{width: 230px; height: 250px;}
+@media screen and (max-width: 600px) {
+    .img-resize{width: 100%; height: auto; display: inline-flex;}
+}
+
+.c2r-links {font-family: Arial, Helvetica, sans-serif; font-size: larger; padding: 10px; }
+.c2r-links a{ text-decoration: none; color: white;}
+.c2r-links a:hover{text-decoration: underline; color: purple;}
+
+.c2r-text{font-family: Arial, Helvetica, sans-serif; font-size: larger; padding: auto;}
+.c2r-text p{text-align: center; color: blue;}
+.c2r-text p a{color: blue;}
