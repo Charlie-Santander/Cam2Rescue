@@ -90,9 +90,22 @@
 			
 			if(mysqli_num_rows($record) > 0)
 			{
-                $_SESSION['username'] = $username;
-                //header("Location: index1.php");
-                echo '<script type="text/javascript"> alert("You are an organization user"); window.location="index.php"</script>';	
+				$row = mysqli_num_rows($record);
+				if($row['type'] == "organization") {
+					$_SESSION['username'] = $username;
+					//header("Location: index1.php");
+					echo '<script type="text/javascript"> alert("Hello Cam2Rescue wish for the best of your organization"); window.location="index.php"</script>';	
+				}
+				elseif($row['type'] == "admin") {
+					$_SESSION['username'] = $username;
+					//header("Location: index1.php");
+					echo '<script type="text/javascript"> alert("welcome admin"); window.location="index.php"</script>';
+				}
+				else{
+					$_SESSION['username'] = $username;
+					//header("Location: index1.php");
+					echo '<script type="text/javascript"> alert("welcome user"); window.location="index.php"</script>';
+				}
 
 			}
 			else 
@@ -161,6 +174,8 @@
         $update_sql = "UPDATE `upload_image` SET `rescue_status`='Verified' WHERE id = $id";
           mysqli_query($con, $update_sql);
     }
+
+//
 
 
 ?>
